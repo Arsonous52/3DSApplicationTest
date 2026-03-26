@@ -30,7 +30,8 @@ TARGET			:=	$(notdir $(CURDIR))
 BUILD			:=	build
 SOURCES			:=	source
 DATA			:=	data
-INCLUDES		:=	romfs header
+INCLUDES		:=	header
+ROMFS			:=	romfs
 APP_TITLE		:=  3DS Application
 APP_DESCRIPTION	:=  3DS homebrew test
 APP_AUTHOR		:=  Arsonous52
@@ -47,7 +48,7 @@ CFLAGS	:=	-g -Wall -O2 -mword-relocations \
 
 CFLAGS	+=	$(INCLUDE) -D__3DS__
 
-CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++11
+CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++14
 
 ASFLAGS	:=	-g $(ARCH)
 LDFLAGS	=	-specs=3dsx.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
