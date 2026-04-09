@@ -13,3 +13,12 @@ GameObject::~GameObject() {
 void GameObject::draw() {
 	C2D_DrawRectSolid(x, y, 0, width, height, colour);
 }
+    
+
+void World::update(float& dt) {
+    for (const auto& object : objects) object->update(dt);
+}
+
+void World::draw() {
+    for (const auto& object : objects) object->draw();
+}

@@ -8,6 +8,7 @@ class Ship : public GameObject {
 public:
 	int health;
 	float speed;
+	float shotCool;
 	C2D_SpriteSheet sheet;
 	C2D_Sprite sprite;
 	Ship();
